@@ -47,12 +47,12 @@ export PATH=$PATH:/usr/local/bin
 # Install MotionEye
 msg "Installing MotionEye..."
 # yes 2>/dev/null | 
-pip install motioneye &>/dev/null
+#pip install motioneye &>/dev/null
 
 # Prepare the configuration
 msg "Prepare the configuration..."
 mkdir -p /etc/motioneye
-cp /usr/local/share/motioneye/extra/motioneye.conf.sample /etc/motioneye/motioneye.conf
+#cp /usr/local/share/motioneye/extra/motioneye.conf.sample /etc/motioneye/motioneye.conf
 
 # Prepare the media directory
 msg "Prepare the media directory..."
@@ -67,4 +67,4 @@ systemctl start motioneye
 
 # Cleanup container
 msg "Cleanup..."
-rm -rf /setup.sh /var/{cache,log}/* /var/lib/apt/lists/*
+#rm -rf /setup.sh /var/{cache,log}/* /var/lib/apt/lists/*
