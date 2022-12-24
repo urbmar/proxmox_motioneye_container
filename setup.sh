@@ -60,10 +60,10 @@ mkdir -p /var/lib/motioneye
 
 # configure run at startup and start the motionEye server
 msg "Prepare run at startup and start the motionEye server..."
-cp /usr/local/share/motioneye/extra/motioneye.systemd-unit-local /etc/systemd/system/motioneye.service
+#cp /usr/local/share/motioneye/extra/motioneye.systemd-unit-local /etc/systemd/system/motioneye.service
 systemctl daemon-reload
-systemctl enable motioneye
-systemctl start motioneye
+#systemctl enable motioneye
+#systemctl start motioneye
 
 # Cleanup container
 msg "Cleanup..."
