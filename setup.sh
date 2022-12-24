@@ -39,7 +39,7 @@ apt-get update &>/dev/null
 
 # Install the dependencies
 msg "Installing dependencies..."
-#apt-get -y install python-pip python-dev python-setuptools curl libssl-dev libcurl4-openssl-dev libjpeg-dev libz-dev &>/dev/null
+apt-get -y install python3-pip python-dev python-setuptools curl libssl-dev libcurl4-openssl-dev libjpeg-dev libz-dev &>/dev/null
 
 # Add /usr/local/bin to PATH
 export PATH=$PATH:/usr/local/bin
@@ -47,12 +47,12 @@ export PATH=$PATH:/usr/local/bin
 # Install MotionEye
 msg "Installing MotionEye..."
 # yes 2>/dev/null | 
-#pip install motioneye &>/dev/null
+pip install motioneye &>/dev/null
 
 # Prepare the configuration
 msg "Prepare the configuration..."
 mkdir -p /etc/motioneye
-#cp /usr/local/share/motioneye/extra/motioneye.conf.sample /etc/motioneye/motioneye.conf
+cp /usr/local/share/motioneye/extra/motioneye.conf.sample /etc/motioneye/motioneye.conf
 
 # Prepare the media directory
 msg "Prepare the media directory..."
@@ -60,11 +60,11 @@ mkdir -p /var/lib/motioneye
 
 # configure run at startup and start the motionEye server
 msg "Prepare run at startup and start the motionEye server..."
-#cp /usr/local/share/motioneye/extra/motioneye.systemd-unit-local /etc/systemd/system/motioneye.service
+cp /usr/local/share/motioneye/extra/motioneye.systemd-unit-local /etc/systemd/system/motioneye.service
 systemctl daemon-reload
-#systemctl enable motioneye
-#systemctl start motioneye
+systemctl enable motioneye
+systemctl start motioneye
 
 # Cleanup container
 msg "Cleanup..."
-#rm -rf /setup.sh /var/{cache,log}/* /var/lib/apt/lists/*
+rm -rf /setup.sh /var/{cache,log}/* /var/lib/apt/lists/*
