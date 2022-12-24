@@ -49,7 +49,7 @@ TEMP_DIR=$(mktemp -d)
 pushd $TEMP_DIR >/dev/null
 
 # Download setup script
-wget -qL https://raw.githubusercontent.com/JedimasterRDW/proxmox_motioneye_container/master/setup.sh
+wget -qL https://raw.githubusercontent.com/urbmar/proxmox_motioneye_container/master/setup.sh
 
 # Select storage location
 STORAGE_LIST=( $(pvesm status -content rootdir | awk 'NR>1 {print $1}') )
@@ -80,7 +80,7 @@ msg "Updating LXC template list..."
 pveam update >/dev/null
 msg "Downloading LXC template..."
 OSTYPE=debian
-OSVERSION=${OSTYPE}-10
+OSVERSION=${OSTYPE}-11
 mapfile -t TEMPLATES < <(pveam available -section system | sed -n "s/.*\($OSVERSION.*\)/\1/p" | sort -t - -k 2 -V)
 TEMPLATE="${TEMPLATES[-1]}"
 pveam download local $TEMPLATE >/dev/null ||
