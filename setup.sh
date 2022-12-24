@@ -39,7 +39,7 @@ apt-get update &>/dev/null
 
 # Install the dependencies
 msg "Installing dependencies..."
-apt-get -y install python-pip python-dev python-setuptools curl libssl-dev libcurl4-openssl-dev libjpeg-dev libz-dev &>/dev/null
+#apt-get -y install python-pip python-dev python-setuptools curl libssl-dev libcurl4-openssl-dev libjpeg-dev libz-dev &>/dev/null
 
 # Add /usr/local/bin to PATH
 export PATH=$PATH:/usr/local/bin
